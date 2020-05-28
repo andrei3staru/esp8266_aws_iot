@@ -30,3 +30,10 @@ More details: https://aws.amazon.com/iot-core/pricing/
 6. Upload the files in the data folder to the ESP8266 file system.
 7. Upload the sketch to ESP8266 using Arduino.
 8. Use the Test menu in AWS IOT console to subscribe and publish messages.
+
+## Examples
+
+Multiple Leds: https://gist.github.com/igrr/7f7e7973366fc01d6393
+PubSubClient API: https://pubsubclient.knolleary.net/api#loop
+AWS IOT SDK: https://github.com/aws/aws-iot-device-sdk-python-v2
+AWS Actions: https://docs.aws.amazon.com/iot/latest/developerguide/iot-rule-actions.html
