@@ -8,8 +8,8 @@
 #include <WiFiUdp.h>
 
 // TODO - Update these with values suitable for your network.
-const char *ssid = "SSID";
-const char *password = "PASSWORD";
+const char *ssid = "ssid";
+const char *password = "password";
 #define PUB_GPIO2_STATUS "esp8266/gpio2/status"
 #define SUB_GPIO2_ACTION "esp8266/gpio2/action"
 #define GPIO2_LED 2
@@ -19,7 +19,7 @@ WiFiUDP ntpUDP;
 NTPClient timeClient(ntpUDP, "pool.ntp.org");
 
 // TODO - Add AWS endpoint
-const char *AWS_endpoint = "ENDPOINT"; //MQTT broker ip
+const char *AWS_endpoint = "endpoint"; //MQTT broker ip
 
 void PubSubCallback(char *topic, byte *payload, unsigned int length)
 {
@@ -45,13 +45,11 @@ void PubSubCallback(char *topic, byte *payload, unsigned int length)
     if (strON == strPayload)
     {
       digitalWrite(GPIO2_LED, LOW);
-      //  client.publish(PUB_GPIO2_STATUS, "ON");
       led_status = "ON";
     }
     else if (strOFF == strPayload)
     {
       digitalWrite(GPIO2_LED, HIGH);
-      //  client.publish(PUB_GPIO2_STATUS, "OFF");
       led_status = "OFF";
     }
   }
@@ -161,7 +159,7 @@ void setup()
   }
 
   // TODO - Load certificate file
-  File cert = SPIFFS.open("/foo-certificate.pem.crt", "r");
+  File cert = SPIFFS.open("/81205bc4c2-certificate.pem.crt", "r");
   if (!cert)
   {
     Serial.println("Failed to open cert file");
@@ -177,7 +175,7 @@ void setup()
     Serial.println("cert not loaded");
 
   // TODO - Load private key file
-  File private_key = SPIFFS.open("/foo-private.pem.key", "r");
+  File private_key = SPIFFS.open("/81205bc4c2-private.pem.key", "r");
   if (!private_key)
   {
     Serial.println("Failed to open private cert file");
