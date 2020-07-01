@@ -1,0 +1,25 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[[source]]
+name = "vmx-cloud"
+url = "https://pypicloud.tools.vmxeng.net/simple/"
+verify_ssl = true
+
+[dev-packages]
+mypy = "*"
+
+[packages]
+aws-cdk-core = "~=1.45.0"
+aws-cdk-aws-ecs-patterns = "~=1.45.0"
+aws-cdk-aws-ecs = "~=1.45.0"
+aws-cdk-aws-ec2 = "~=1.45.0"
+aws-cdk-aws-rds = "~=1.45.0"
+aws-cdk-aws-certificatemanager = "~=1.45.0"
+aws-cdk-aws-elasticloadbalancingv2 = "~=1.45.0"
+vmx-cdk = {version = "~=0.10.0",index = "vmx-cloud"}
+
+[requires]
+python_version = "3.8"
